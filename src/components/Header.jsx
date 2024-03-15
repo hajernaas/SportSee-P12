@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo-sportsee.svg";
 
 function Header() {
@@ -8,10 +8,10 @@ function Header() {
 				<img src={logo} alt="Logo SportSee " className="nav-logo vertical-center" />
 			</Link>
 			<nav className="nav vertical-center">
-				<Link to="/">Accueil</Link>
-				<Link to="/">Profil</Link>
-				<Link to="/">Réglage</Link>
-				<Link to="/">Communauté</Link>
+				<NavLink to="/">Accueil</NavLink>
+				<NavLink to="/">Profil</NavLink>
+				<NavLink to="/">Réglage</NavLink>
+				<NavLink to="/">Communauté</NavLink>
 			</nav>
 		</header>
 	);

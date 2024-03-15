@@ -35,7 +35,7 @@ export class ActivityData {
 	getActivityData() {
 		const Activity = this.sessions.map((elm, index) => {
 			return {
-				day: (index + 1).toString(),
+				day: index + 1,
 				kg: elm.kilogram,
 				calories: elm.calories,
 			};

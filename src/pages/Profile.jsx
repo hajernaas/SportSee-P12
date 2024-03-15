@@ -1,10 +1,10 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { UserInfo } from "../service/Api";
-//import ActivityChart from "../components/ActivityChart";
-//import Activity from "../components/Activity";
+import ActivityChart from "../components/ActivityChart";
+
 //import { Barchart } from "../components/Barchart";
-import ChartActivity from "../components/ActivityChart";
+//import ChartActivity from "../components/ActivityChart";
 
 function Profile() {
 	const { userId } = useParams();
@@ -49,8 +49,8 @@ function Profile() {
 						<div className="section-graph">
 							{/* <ActivityChart userId={fetchedData?.id} />{" "} */}
 							{/* <Activity userId={fetchedData?.id} /> */}
-							{/* <ActivityChart /> */}
-							<ChartActivity />
+							<ActivityChart />
+							{/* <ChartActivity /> */}
 						</div>
 					</div>
 				</div>
