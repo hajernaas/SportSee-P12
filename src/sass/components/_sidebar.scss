@@ -1,0 +1,29 @@
+.sidebar {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7.3125rem;
+    height: 100%;
+    overflow: hidden;
+    background: $backgroundDark;
+    text-align: center;
+
+    &__icon {
+        margin: 0;
+    }
+
+
+    &__copyright {
+        position: absolute;
+        bottom: 8rem;
+        left: -8%;
+        width: max-content;
+        margin: 0;
+        transform: rotate(-90deg);
+        color: $white;
+        // font-family: 'Roboto';
+        font-size: 0.75rem;
+        //font-weight: 500;
+    }
+}

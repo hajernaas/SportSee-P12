@@ -1,0 +1,15 @@
+// _utils.scss
+@import "./utils/variables";
+@import "./utils/mixins";
+
+// _base.scss
+@import "./base/typography";
+
+//_components.scss
+@import "./components/header";
+@import "./components/sidebar";
+@import "./components/sidebarIcon";
+@import "./components/ActivityChart";
+//_pages.scss
+@import "./pages/home";
+@import "./pages/profile";
