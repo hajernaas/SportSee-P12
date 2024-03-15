@@ -1,26 +1,21 @@
 //import ActivityChart from "../components/Activity";
 import { Link } from "react-router-dom";
+import karl from "../assets/users/karl.jpg";
+import cecilia from "../assets/users/cecilia.jpg";
 
 function Home() {
 	return (
 		<main>
-			<section className="home">
-				<div className="home__users">
-					<p className="home__users-txt">Profils Utilisateurs</p>
-					<ul className="home__users-profile">
-						<li>
-							<Link to="/user/12">
-								<p>Karl Dovineau</p>
-							</Link>
-						</li>
-						<li>
-							<Link to="/user/18">
-								<p>Cécilia Ratorez</p>
-							</Link>
-						</li>
-					</ul>
-				</div>
-			</section>
+			<nav className="login__nav">
+				<Link to="/user/12" className="login__nav--link">
+					<img src={karl} alt="Karl Dovineau" />
+					<p>Karl Dovineau</p>
+				</Link>
+				<Link to="/user/18" className="login__nav--link">
+					<img src={cecilia} alt="Cecilia Ratorez" />
+					<p>Cecilia Ratorez</p>
+				</Link>
+			</nav>
 		</main>
 	);
 }
