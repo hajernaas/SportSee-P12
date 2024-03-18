@@ -3,3 +3,30 @@
         @content;
     }
 }
+
+@mixin full-WidhtHeight {
+    width: 100%;
+    height: 100%;
+}
+
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex-justify($justify) {
+    display: flex;
+    justify-content: $justify;
+}
+
+@mixin flex-align($align) {
+    display: flex;
+    align-items: $align;
+
+}
+
+@mixin dimension($width, $height) {
+    width: $width;
+    height: $height;
+}

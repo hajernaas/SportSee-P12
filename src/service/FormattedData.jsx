@@ -15,6 +15,7 @@ export class UserData {
 		return {
 			id: this.id,
 			keyData: KeyDataUser,
+			//keyData: this.keyData,
 			score: this.score * 100,
 			userInfos: this.userInfos,
 			/*firstName: this.userInfos.firstName,

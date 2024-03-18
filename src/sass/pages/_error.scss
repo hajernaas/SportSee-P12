@@ -1,0 +1,52 @@
+.error {
+
+    @include flex-align($align: center);
+    flex-direction: column;
+    gap: $gap2;
+    text-align: center;
+    /* margin: 100px auto;
+    padding: 40px;*/
+
+
+    @media screen and (min-width: 1024px) {
+        gap: $gap1;
+    }
+
+    &__title {
+        font-size: $f-size-error-mobile;
+        font-weight: $bold-font-weight;
+        @include dimension($width: 198px, $height: 99px);
+        margin-top: 70px;
+
+        @media screen and (min-width: 1024px) {
+            font-size: $f-size-error-desktop;
+            // margin-top: 139px;
+            @include dimension($width: 597px, $height: 263px);
+
+        }
+    }
+
+    &__text {
+        text-align: center;
+        font-size: $f4-font-size;
+        font-weight: $medium-font-weight;
+
+        @media screen and (min-width: 1024px) {
+            font-size: $f2-font-size;
+        }
+    }
+
+    &__link {
+        text-decoration: underline;
+        font-size: $f5-font-size ;
+        font-weight: $medium-font-weight;
+        margin-bottom: 50px;
+        text-align: center;
+
+        @media screen and (min-width: 1024px) {
+            //margin-bottom: 139px;
+            font-size: $f4-font-size;
+        }
+
+    }
+}

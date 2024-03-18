@@ -16,7 +16,7 @@
     .main-userInfo {
         display: flex;
         justify-content: space-between;
-        gap: 30px;
+        gap: 65px;
 
         @media screen and (max-width: 1240px) {
             flex-direction: column;

@@ -14,44 +14,6 @@ function ActivityChart() {
 	const [error, setError] = useState(null);
 	//const [isLoading, setLoading] = useState(true);
 
-	/*const activityData = [
-		{
-			day: 1,
-			"Poids (kg)": 80,
-			"Calories brûlées (kCal)": 240,
-		},
-		{
-			day: 2,
-			"Poids (kg)": 80,
-			"Calories brûlées (kCal)": 220,
-		},
-		{
-			day: 3,
-			"Poids (kg)": 81,
-			"Calories brûlées (kCal)": 280,
-		},
-		{
-			day: 4,
-			"Poids (kg)": 81,
-			"Calories brûlées (kCal)": 290,
-		},
-		{
-			day: 5,
-			"Poids (kg)": 80,
-			"Calories brûlées (kCal)": 160,
-		},
-		{
-			day: 6,
-			"Poids (kg)": 78,
-			"Calories brûlées (kCal)": 162,
-		},
-		{
-			day: 7,
-			"Poids (kg)": 76,
-			"Calories brûlées (kCal)": 390,
-		},
-	];*/
-
 	useEffect(() => {
 		async function fetchData() {
 			try {

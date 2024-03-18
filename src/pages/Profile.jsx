@@ -1,10 +1,8 @@
 import { useParams, Navigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { UserInfo } from "../service/Api";
+import KeyDataDetails from "../components/KeyDataDetails";
 import ActivityChart from "../components/ActivityChart";
-
-//import { Barchart } from "../components/Barchart";
-//import ChartActivity from "../components/ActivityChart";
 
 function Profile() {
 	const { userId } = useParams();
@@ -18,6 +16,7 @@ function Profile() {
 				const data = await UserInfo(userId);
 				console.log("infoUser", data);
 				console.log("firstname", data.userInfos.firstName);
+				console.log("keydata", data.keyData);
 				if (data) {
 					setData(data);
 					//setLoading(false);
@@ -34,6 +33,29 @@ function Profile() {
 
 	if (error) return <Navigate to="/Error" />;
 
+	/*	return fetchedData ? (
+		<>
+			<section className="profile">
+				<section className="profile__title">
+					<h1>
+						Bonjour
+						<span>{fetchedData?.userInfos?.firstName}</span>
+					</h1>
+					<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+				</section>
+
+				<section className="profile__details">
+					<KeyDataDetails keyData={fetchedData?.keyData} />
+					<div className="section-graph">
+						<ActivityChart />
+					</div>
+				</section>
+			</section>
+		</>
+	) : (
+		<p className="errorMessage">Erreur de chargement des données utilisateur..</p>
+	);*/
+
 	return fetchedData ? (
 		<>
 			<section>
@@ -47,10 +69,11 @@ function Profile() {
 					</div>
 					<div className="main-userInfo">
 						<div className="section-graph">
-							{/* <ActivityChart userId={fetchedData?.id} />{" "} */}
-							{/* <Activity userId={fetchedData?.id} /> */}
 							<ActivityChart />
-							{/* <ChartActivity /> */}
+							<div className="container-sub-graph"></div>
+						</div>
+						<div className="section-nutriment">
+							<KeyDataDetails keyData={fetchedData?.keyData} />
 						</div>
 					</div>
 				</div>
