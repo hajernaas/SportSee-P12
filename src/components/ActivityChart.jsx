@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { UserActivity } from "../service/Api";
-//import { useParams, Navigate } from "react-router-dom";
 import { Navigate, useParams } from "react-router-dom";
-//import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from "recharts";
-/*import styled from "styled-components";
-import { BarChart, CartesianGrid, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer } from "recharts";
-import PropTypes from "prop-types";*/
 import { BarChart, CartesianGrid, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer } from "recharts";
 
 function ActivityChart() {

@@ -1,18 +1,20 @@
 .KeydataContainer {
 
-    margin: 0 auto;
+    /* margin: 0 auto;
+   
+    gap: 20px;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    height: 100%;
 
     img {
         width: 45px;
         height: 45px;
     }
 
-
-    @media (max-width: 1320px) {
+    /*
+    @media (max-width: 1240px) {
         width: 100%;
         flex-direction: row;
         margin-bottom: 8px;
@@ -23,7 +25,7 @@
             height: 45px;
         }
     }
-
+*/
     @media (max-width: 943px) {
         flex-wrap: wrap;
     }

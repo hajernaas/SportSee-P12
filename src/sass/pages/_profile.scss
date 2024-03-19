@@ -1,47 +1,75 @@
-.Home-bloc {
-    width: 100%;
-    padding: 35px 40px;
-
-    .title {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-
-        span {
-            color: red;
-            margin-left: 7px;
-        }
-    }
-
-    .main-userInfo {
-        display: flex;
-        justify-content: space-between;
-        gap: 65px;
-
-        @media screen and (max-width: 1240px) {
-            flex-direction: column;
+.dashborad {
 
 
-        }
 
-        .section-nutriment {
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
+    &__bloc {
+        width: 100%;
+        padding: 35px 40px;
 
-            @media screen and (max-width: 1240px) {
-                flex-direction: row;
-                flex-wrap: wrap;
-                gap: 30px;
+        &--title {
+
+            h1 {
+                font-size: 48px;
+                margin-top: 50px;
+            }
+
+            span {
+                color: #FF0101;
 
             }
+
+            p {
+                font-size: 18px;
+                margin: 10px 0 20px 0;
+            }
+
         }
 
+        &--userInfo {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+            margin-top: 70px;
+            margin-bottom: 50px;
+
+            @media screen and (max-width: 1200px) {
+                margin-bottom: 0;
+            }
+
+            .graph {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                width: 67%;
+                height: 100%;
+
+                &__activity {
+                    background: #FBFBFB;
+                    width: 100%;
+                    height: 50%;
+                }
+
+                &__sub-activity {
+                    display: flex;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 50%;
+                    gap: 1%
+                }
+            }
+
+            .nutriment {
+                max-width: 258px;
+                width: 25%;
+            }
+
+        }
+
+
+
+
     }
 
-    .container-sub-graph {
-        display: flex;
-        height: 300px;
-        justify-content: space-between
-    }
+
+
 }

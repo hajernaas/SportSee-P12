@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { UserInfo } from "../service/Api";
 import KeyDataDetails from "../components/KeyDataDetails";
 import ActivityChart from "../components/ActivityChart";
+import AverageSessionsChart from "../components/AverageSessionsChart";
 
 function Profile() {
 	const { userId } = useParams();
@@ -58,21 +59,27 @@ function Profile() {
 
 	return fetchedData ? (
 		<>
-			<section>
-				<div className="Home-bloc">
-					<div className="title">
+			<section className="dashborad">
+				<div className="dashborad__bloc">
+					<div className="dashborad__bloc--title">
 						<h1>
 							Bonjour
 							<span>{fetchedData?.userInfos?.firstName}</span>
 						</h1>
 						<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
 					</div>
-					<div className="main-userInfo">
-						<div className="section-graph">
-							<ActivityChart />
-							<div className="container-sub-graph"></div>
+					<div className="dashborad__bloc--userInfo">
+						<div className="graph">
+							<div className="graph__activity">
+								<ActivityChart />
+							</div>
+
+							<div className="graph__sub-activity">
+								<AverageSessionsChart />
+							</div>
 						</div>
-						<div className="section-nutriment">
+
+						<div className="nutriment">
 							<KeyDataDetails keyData={fetchedData?.keyData} />
 						</div>
 					</div>

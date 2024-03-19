@@ -15,12 +15,8 @@ export class UserData {
 		return {
 			id: this.id,
 			keyData: KeyDataUser,
-			//keyData: this.keyData,
 			score: this.score * 100,
 			userInfos: this.userInfos,
-			/*firstName: this.userInfos.firstName,
-			lastName: this.userInfos.lastName,
-			age: this.userInfos.age,*/
 		};
 	}
 }
@@ -29,8 +25,6 @@ export class ActivityData {
 	constructor(data) {
 		this.userId = data.userId;
 		this.sessions = data.sessions;
-		/*this.weightName = "Poids (kg)";
-		this.caloriesName = "Calories brûlées (kCal)";*/
 	}
 
 	getActivityData() {
@@ -51,7 +45,7 @@ export class PerformanceData {
 		this.userId = data.userId;
 		this.performance = data.data;
 	}
-	// RADARCHART
+
 	getPerformanceData() {
 		const kind = {
 			1: "Cardio",

@@ -26,7 +26,6 @@ export async function UserInfo(userId) {
 		console.log("mockData", mockData);
 		if (!mockData) throw new Error("User not found in mock data");
 		return new UserData(mockData).getUserData();
-		//return mockData;
 	} else {
 		try {
 			const response = await fetch(`${API_URL}/${userId}`);
