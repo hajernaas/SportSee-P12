@@ -9,37 +9,37 @@
 
 }
 
-
-
 .titleAvrerage {
 
     position: absolute;
-    margin-left: 1rem;
-    margin-top: 1rem;
+    margin-left: 34px;
+    margin-top: 29px;
     font-size: 15px;
     font-weight: 500;
     line-height: 24px;
     max-width: 147px;
-    color: rgba(255, 255, 255, 0.7);
+    opacity: 0.504;
+    color: #FFF;
 
-    @media screen and (max-width: 1200px) {
+    /* @media screen and (max-width: 1200px) {
         margin-top: 0.8rem;
         font-size: 13px;
-    }
+    }*/
 }
 
 
 .TooltipBoxAverage {
     background-color: white;
     color: black;
-    padding: 0px 10px;
-    font-size: 5px;
-    height: 40px;
+    padding: 1px 7px;
+    height: 25px;
+    width: 39px;
+    height: 25px;
 
     p {
         font-size: 12px;
-        font-weight: bold;
-        line-height: 40px;
+        font-weight: 500;
+        line-height: 24px;
         margin: 0;
     }
 }

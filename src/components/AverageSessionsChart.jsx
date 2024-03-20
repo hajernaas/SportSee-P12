@@ -6,17 +6,17 @@ import { UserAverageSessions } from "../service/Api";
 
 function AverageSessionsChart() {
 	const { userId } = useParams();
-	const [fetchedData, setData] = useState([]);
+	const [averageSessionsData, setAverageSessions] = useState([]);
 	const [error, setError] = useState(null);
 	//const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		async function fetchData() {
+		async function fetchDataAverageSessions() {
 			try {
 				const data = await UserAverageSessions(userId);
 				console.log("ActivitySessions", data);
 				if (data) {
-					setData(data);
+					setAverageSessions(data);
 				} else {
 					throw new Error("Aucune donnée disponible.");
 				}
@@ -25,7 +25,7 @@ function AverageSessionsChart() {
 			}
 		}
 		//setLoading(true);
-		fetchData();
+		fetchDataAverageSessions();
 	}, [userId]);
 
 	if (error) return <Navigate to="/Error" />;
@@ -38,16 +38,16 @@ function AverageSessionsChart() {
 			</h3>
 			<ResponsiveContainer width="100%" aspect={258 / 263}>
 				<LineChart
-					width={730}
-					height={250}
-					data={fetchedData}
+					//width={730}
+					//height={250}
+					data={averageSessionsData}
 					margin={{ top: 80, bottom: 16, left: 16, right: 16 }}>
 					<XAxis
 						dataKey="day"
-						dy={0}
+						dy={10}
 						axisLine={false}
 						tickLine={false}
-						tick={{ fill: "#FFFFFF", opacity: "0.5", fontSize: "1rem" }}
+						tick={{ fill: "#FFFFFF", opacity: "0.5", fontSize: 12, fontWeight: 500 }}
 					/>
 					<YAxis hide={true} domain={["dataMin-20", "dataMax+10"]} />
 					<Tooltip content={CustomTooltip} cursor={<CustomCursor />} />
@@ -55,17 +55,20 @@ function AverageSessionsChart() {
 					<Line
 						type="natural"
 						dataKey="sessionLength"
-						stroke="url(#colorUv)"
+						stroke="url(#white)"
 						strokeWidth={2}
 						dot={false}
 						activeDot={{
-							stroke: "#FFFFFF",
-							strokeWidth: 8,
+							//stroke: "#FFFFFF",
+							stroke: "rgba(255, 255, 255, 0.2)",
+							strokeWidth: 5,
+							fill: "#FFF",
 							r: 4,
 						}}
 					/>
+
 					<defs>
-						<linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
+						<linearGradient id="white" x1="0%" y1="0" x2="100%" y2="0">
 							<stop offset="0%" stopColor="rgba(255, 255, 255, 0.5)" />
 							<stop offset="20%" stopColor="rgba(255, 255, 255, 0.55)" />
 							<stop offset="40%" stopColor="rgba(255, 255, 255, 0.6)" />

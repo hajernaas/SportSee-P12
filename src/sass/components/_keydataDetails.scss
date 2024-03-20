@@ -9,8 +9,10 @@
     height: 100%;
 
     img {
-        width: 45px;
-        height: 45px;
+        /* width: 45px;
+        height: 45px;*/
+        width: 60px;
+        height: 60px;
     }
 
     /*
@@ -26,11 +28,13 @@
         }
     }
 */
+    /*
+
     @media (max-width: 943px) {
         flex-wrap: wrap;
     }
 
     @media (max-width: 660px) {
         justify-content: space-around;
-    }
+    }*/
 }

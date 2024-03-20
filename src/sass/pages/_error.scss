@@ -15,6 +15,7 @@
     &__title {
         font-size: $f-size-error-mobile;
         font-weight: $bold-font-weight;
+        color: $secondary-color;
         @include dimension($width: 198px, $height: 99px);
         margin-top: 70px;
 
@@ -30,6 +31,7 @@
         text-align: center;
         font-size: $f4-font-size;
         font-weight: $medium-font-weight;
+        color: $secondary-color;
 
         @media screen and (min-width: 1024px) {
             font-size: $f2-font-size;

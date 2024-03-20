@@ -7,64 +7,56 @@ import AverageSessionsChart from "../components/AverageSessionsChart";
 
 function Profile() {
 	const { userId } = useParams();
-	const [fetchedData, setData] = useState({});
-	const [error, setError] = useState(null);
-	//const [isLoading, setLoading] = useState(true);
+	const [userData, setUser] = useState({});
+	const [error, setError] = useState(false);
+	const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		async function fetchData() {
+		//setLoading(true);
+		async function fetchDataUser() {
 			try {
 				const data = await UserInfo(userId);
 				console.log("infoUser", data);
 				console.log("firstname", data.userInfos.firstName);
 				console.log("keydata", data.keyData);
-				if (data) {
-					setData(data);
-					//setLoading(false);
+				setUser(data);
+				setLoading(false);
+				/*if (data) {
+					setUser(data);
+				
 				} else {
 					throw new Error("Aucune donnée disponible.");
-				}
-			} catch (error) {
-				setError(error.message);
-			}
+				}*/
+			} catch (err) {
+				console.log("===== error =====", err);
+				setError(true);
+			} /*finally {
+				setLoading(false);
+			
+			}*/
 		}
-		//setLoading(true);
-		fetchData();
+		setLoading(true);
+		fetchDataUser();
 	}, [userId]);
 
 	if (error) return <Navigate to="/Error" />;
 
-	/*	return fetchedData ? (
-		<>
-			<section className="profile">
-				<section className="profile__title">
-					<h1>
-						Bonjour
-						<span>{fetchedData?.userInfos?.firstName}</span>
-					</h1>
-					<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
-				</section>
+	if (isLoading) {
+		<section className="dashborad">
+			<h2 className="center">Chargement...</h2>
+		</section>;
+		//return <p className="errorMessage">Chargement...</p>;
+	}
+	console.log("isLoading4", isLoading);
 
-				<section className="profile__details">
-					<KeyDataDetails keyData={fetchedData?.keyData} />
-					<div className="section-graph">
-						<ActivityChart />
-					</div>
-				</section>
-			</section>
-		</>
-	) : (
-		<p className="errorMessage">Erreur de chargement des données utilisateur..</p>
-	);*/
-
-	return fetchedData ? (
+	return userData ? (
 		<>
 			<section className="dashborad">
 				<div className="dashborad__bloc">
 					<div className="dashborad__bloc--title">
 						<h1>
 							Bonjour
-							<span>{fetchedData?.userInfos?.firstName}</span>
+							<span>{userData?.userInfos?.firstName}</span>
 						</h1>
 						<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
 					</div>
@@ -80,7 +72,7 @@ function Profile() {
 						</div>
 
 						<div className="nutriment">
-							<KeyDataDetails keyData={fetchedData?.keyData} />
+							<KeyDataDetails keyData={userData?.keyData} />
 						</div>
 					</div>
 				</div>

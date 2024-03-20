@@ -5,33 +5,50 @@ import { BarChart, CartesianGrid, Tooltip, XAxis, YAxis, Bar, ResponsiveContaine
 
 function ActivityChart() {
 	const { userId } = useParams();
-	const [fetchedData, setData] = useState([]);
-	const [error, setError] = useState(null);
+	const [activityData, setActivity] = useState([]);
+	const [error, setError] = useState(false);
 	//const [isLoading, setLoading] = useState(true);
 
 	useEffect(() => {
-		async function fetchData() {
+		async function fetchDataActivity() {
+			//setLoading(true);
 			try {
 				const data = await UserActivity(userId);
 				console.log("infoActivity", data);
 				//console.log("dar", data?.userId);
 				console.log("sessions", data?.sessions);
-				if (data) {
-					setData(data);
+				setActivity(data);
+
+				/*if (data) {
+					setActivity(data);
 				} else {
 					throw new Error("Aucune donnée disponible.");
-				}
-			} catch (error) {
-				setError(error.message);
-			}
+				}*/
+			} catch (err) {
+				console.log("===== error =====", err);
+				setError(true);
+			} /* finally {
+				setLoading(false);
+			}*/
 		}
 		//setLoading(true);
-		fetchData();
+		fetchDataActivity();
 	}, [userId]);
 
-	console.log("fetched", fetchedData);
+	console.log("fetched", activityData);
 
 	if (error) return <Navigate to="/Error" />;
+
+	/*if (isLoading) {
+	
+		if (isLoading) {
+			<section className="dashborad">
+				<h2 className="center">Chargement...</h2>
+			</section>;
+			//return <p className="errorMessage">Chargement...</p>;
+		}
+	}
+	console.log("isLoading3", isLoading);*/
 
 	const CustomTooltip = ({ active, payload }) => {
 		if (active && payload && payload.length) {
@@ -52,19 +69,19 @@ function ActivityChart() {
 				<ul>
 					<li>
 						<div></div>
-						Poids (kg)
+						<span>Poids (kg)</span>
 					</li>
 					<li>
-						<div></div> Calories Brûlées (kCal)
+						<div></div> <span>Calories Brûlées (kCal)</span>
 					</li>
 				</ul>
 			</div>
 			<ResponsiveContainer width="100%" height="100%">
 				<BarChart
-					data={fetchedData}
+					data={activityData}
 					barGap={8}
 					margin={{ top: 100, right: 20, left: 50, bottom: 20 }}>
-					<CartesianGrid strokeDasharray="5 5" horizontalPoints={[100, 175]} vertical={false} />
+					<CartesianGrid strokeDasharray="3 3" horizontalPoints={[100, 175]} vertical={false} />
 					<XAxis
 						tick={{ fontSize: 14, fontWeight: 500 }}
 						dy={15}
@@ -76,15 +93,20 @@ function ActivityChart() {
 					<YAxis
 						dataKey="calories"
 						domain={[0, "dataMax+20"]}
-						yAxisId="left"
+						//domain={[0, "dataMax +100"]}
+						//domain={["dataMin-150", "dataMax+0"]}
+						yAxisId="calories"
+						orientation="left"
 						hide={true}
 						axisLine={false}
 					/>
 					<YAxis
 						dataKey="kg"
 						domain={["dataMin-1", "dataMax+2"]}
+						//domain={["dataMin-4", "dataMax+1"]}
+						//domain={["dataMin-5", "dataMax+10"]}
 						orientation="right"
-						yAxisId="right"
+						yAxisId="kilogram"
 						tickCount={3}
 						tickLine={false}
 						dx={40}
@@ -92,19 +114,25 @@ function ActivityChart() {
 						tick={{ fontSize: 14, fontWeight: 500 }}
 					/>
 					<Tooltip
-						offset={20}
+						offset={28}
 						content={CustomTooltip}
 						cursor={{
-							fill: "rgba(0, 0,0, 0.3)",
+							fill: "rgba(196, 196, 196, 0.50)",
 						}}
 					/>
-					<Bar dataKey="kg" fill="#282D30" barSize={10} radius={[5, 5, 0, 0]} yAxisId="right" />
+					<Bar
+						dataKey="kg"
+						fill="#282D30"
+						barSize={10}
+						radius={[30, 30, 0, 0]}
+						yAxisId="kilogram"
+					/>
 					<Bar
 						dataKey="calories"
 						fill="#E60000"
 						barSize={10}
-						radius={[5, 5, 0, 0]}
-						yAxisId="left"
+						radius={[30, 30, 0, 0]}
+						yAxisId="calories"
 					/>
 				</BarChart>
 			</ResponsiveContainer>

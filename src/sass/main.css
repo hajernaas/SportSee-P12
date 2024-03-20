@@ -64,12 +64,14 @@ section {
 	justify-content: space-evenly;
 	width: 80%;
 }
+
 @media screen and (min-width: 1440px) {
 	.nav {
 		justify-content: space-between;
 		width: 70%;
 	}
 }
+
 .nav-wrapper {
 	z-index: 2;
 	position: fixed;
@@ -81,6 +83,7 @@ section {
 	width: 22%;
 	height: 3.75rem;
 }
+
 @media screen and (min-width: 1440px) {
 	.nav-wrapper img {
 		width: 15%;
@@ -89,6 +92,7 @@ section {
 .nav-wrapper a {
 	color: #ffffff;
 }
+
 @media screen and (min-width: 1440px) {
 	.nav-wrapper a {
 		width: 15%;

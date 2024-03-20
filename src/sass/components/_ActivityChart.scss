@@ -6,15 +6,15 @@
     width: 100%;
     // height: 50%;
     height: 320px;
-    padding-right: 15px;
+    //padding-right: 15px;
 
 }
 
 .LegendBox {
 
     position: absolute;
-    background-color: #F7F7F7;
-    border-radius: 5px;
+    //background-color: #F7F7F7;
+    // border-radius: 5px;
     top: 30px;
     width: 95%;
     margin: 0;
@@ -23,22 +23,23 @@
 
     h3 {
         display: inline;
-        margin-left: 40px;
-        font-size: 0.9rem;
+        margin-left: 32px;
+        margin-top: 20px;
         font-weight: 500;
+        font-size: 15px;
     }
 
     ul {
         li {
             margin-left: 30px;
             display: inline;
-            font-size: 0.875rem;
+            font-size: 14px;
             font-weight: 500;
+            color: #74798C;
 
             div {
                 margin-right: 5px;
                 display: inline-block;
-
                 background-color: #282d30;
                 height: 10px;
                 width: 10px;
@@ -54,17 +55,22 @@
 
 
 .TooltipBox {
-    transform: translateX(20px);
-    width: 60px;
-    height: 100px;
+    transform: translateX(30px);
+
+
+    width: 45px;
+    height: 80px;
     line-height: 30px;
-    padding-top: 10px;
+
     text-align: center;
-    background-color: #B30909;
+
+    background: #E60000;
 
     p {
         color: $white;
-        font-size: 0.8rem;
+        //font-size: 0.8rem;
+        font-size: 10px;
+        font-weight: 500;
     }
 
 }
