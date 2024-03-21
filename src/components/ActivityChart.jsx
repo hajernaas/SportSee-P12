@@ -92,9 +92,8 @@ function ActivityChart() {
 					/>
 					<YAxis
 						dataKey="calories"
-						domain={[0, "dataMax+20"]}
-						//domain={[0, "dataMax +100"]}
-						//domain={["dataMin-150", "dataMax+0"]}
+						//	domain={[0, "dataMax +100"]}
+						domain={["dataMin-150", "dataMax+0"]}
 						yAxisId="calories"
 						orientation="left"
 						hide={true}
@@ -102,8 +101,7 @@ function ActivityChart() {
 					/>
 					<YAxis
 						dataKey="kg"
-						domain={["dataMin-1", "dataMax+2"]}
-						//domain={["dataMin-4", "dataMax+1"]}
+						domain={["dataMin-5", "dataMax+10"]}
 						//domain={["dataMin-5", "dataMax+10"]}
 						orientation="right"
 						yAxisId="kilogram"

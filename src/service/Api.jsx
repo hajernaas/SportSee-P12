@@ -21,9 +21,9 @@ console.log("is", isMockData);
 
 export async function UserInfo(userId) {
 	if (isMockData) {
-		console.log("is", isMockData);
+		//console.log("is", isMockData);
 		const mockData = dataUser.find((user) => user.id === Number(userId));
-		console.log("mockData", mockData);
+		//console.log("mockData", mockData);
 		if (!mockData) throw new Error("User not found in mock data");
 		return new UserData(mockData).getUserData();
 	} else {
@@ -31,7 +31,7 @@ export async function UserInfo(userId) {
 			const response = await fetch(`${API_URL}/${userId}`);
 			if (!response.ok) throw new Error("Network response was not ok");
 			const data = await response.json();
-			return new UserData(data.data);
+			return new UserData(data.data).getUserData();
 		} catch (error) {
 			console.error("There has been a problem with your fetch operation:", error);
 			throw error;
@@ -50,7 +50,7 @@ export async function UserActivity(userId) {
 			const response = await fetch(`${API_URL}/${userId}/activity`);
 			if (!response.ok) throw new Error("Network response was not ok");
 			const data = await response.json();
-			return new ActivityData(data.data);
+			return new ActivityData(data.data).getActivityData();
 		} catch (error) {
 			console.error("fetch operation error:", error);
 			throw error;

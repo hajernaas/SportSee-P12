@@ -4,54 +4,52 @@ import { UserInfo } from "../service/Api";
 import KeyDataDetails from "../components/KeyDataDetails";
 import ActivityChart from "../components/ActivityChart";
 import AverageSessionsChart from "../components/AverageSessionsChart";
+//import { LoaderInTo404 } from "../components/Loader";
 
 function Profile() {
 	const { userId } = useParams();
 	const [userData, setUser] = useState({});
 	const [error, setError] = useState(false);
-	const [isLoading, setLoading] = useState(true);
+	/*const [isLoading, setLoading] = useState(true);
+	console.log("isLoading", isLoading);*/
 
 	useEffect(() => {
 		//setLoading(true);
 		async function fetchDataUser() {
+			//setLoading(true);
 			try {
 				const data = await UserInfo(userId);
 				console.log("infoUser", data);
 				console.log("firstname", data.userInfos.firstName);
 				console.log("keydata", data.keyData);
 				setUser(data);
-				setLoading(false);
-				/*if (data) {
-					setUser(data);
-				
-				} else {
-					throw new Error("Aucune donnée disponible.");
-				}*/
+				// setLoading(false);
 			} catch (err) {
 				console.log("===== error =====", err);
 				setError(true);
 			} /*finally {
 				setLoading(false);
-			
 			}*/
 		}
-		setLoading(true);
+		//setLoading(true);
 		fetchDataUser();
 	}, [userId]);
 
 	if (error) return <Navigate to="/Error" />;
-
+	/*console.log("isLoading4", isLoading);
 	if (isLoading) {
-		<section className="dashborad">
-			<h2 className="center">Chargement...</h2>
-		</section>;
-		//return <p className="errorMessage">Chargement...</p>;
-	}
-	console.log("isLoading4", isLoading);
-
-	return userData ? (
-		<>
+		return (
 			<section className="dashborad">
+				{ <h2>Chargement...</h2> }
+				<LoaderInTo404 />
+			</section>
+		);
+
+	}*/
+
+	return (
+		<section className="dashborad">
+			{userData && (
 				<div className="dashborad__bloc">
 					<div className="dashborad__bloc--title">
 						<h1>
@@ -76,10 +74,8 @@ function Profile() {
 						</div>
 					</div>
 				</div>
-			</section>
-		</>
-	) : (
-		<p className="errorMessage">Erreur de chargement des données utilisateur..</p>
+			)}
+		</section>
 	);
 }
 

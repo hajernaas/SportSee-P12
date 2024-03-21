@@ -51,7 +51,6 @@ function AverageSessionsChart() {
 					/>
 					<YAxis hide={true} domain={["dataMin-20", "dataMax+10"]} />
 					<Tooltip content={CustomTooltip} cursor={<CustomCursor />} />
-
 					<Line
 						type="natural"
 						dataKey="sessionLength"
@@ -66,14 +65,10 @@ function AverageSessionsChart() {
 							r: 4,
 						}}
 					/>
-
 					<defs>
-						<linearGradient id="white" x1="0%" y1="0" x2="100%" y2="0">
-							<stop offset="0%" stopColor="rgba(255, 255, 255, 0.5)" />
-							<stop offset="20%" stopColor="rgba(255, 255, 255, 0.55)" />
-							<stop offset="40%" stopColor="rgba(255, 255, 255, 0.6)" />
-							<stop offset="60%" stopColor="rgba(255, 255, 255, 0.65)" />
-							<stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
+						<linearGradient id="white" x1="100%" y1="0" x2="0%" y2="0">
+							<stop stopColor="#FFF" />
+							<stop offset="0.810441" stopColor="#FFF" stopOpacity="0.403191" />
 						</linearGradient>
 					</defs>
 				</LineChart>
@@ -99,7 +94,7 @@ CustomTooltip.propTypes = {
 };
 
 const CustomCursor = ({ points }) => {
-	return <Rectangle fill="#000000" opacity={0.2} x={points[0].x} width={500} height={400} />;
+	return <Rectangle fill="#000000" opacity={0.1} x={points[0].x} width={600} height={500} />;
 };
 
 CustomCursor.propTypes = {
@@ -110,4 +105,5 @@ CustomCursor.propTypes = {
 		})
 	),
 };
+
 export default AverageSessionsChart;

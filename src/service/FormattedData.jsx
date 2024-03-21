@@ -10,11 +10,12 @@ export class UserData {
 	}
 
 	getUserData() {
-		const KeyDataUser = { ...this.keyData };
+		//const KeyDataUser = { ...this.keyData };
 
 		return {
 			id: this.id,
-			keyData: KeyDataUser,
+			//keyData: KeyDataUser,
+			keyData: this.keyData,
 			score: this.score * 100,
 			userInfos: this.userInfos,
 		};
@@ -58,9 +59,10 @@ export class PerformanceData {
 		const performanceUser = this.performance.map((elm) => {
 			return {
 				value: elm.value,
-				kindUser: kind[elm.kind],
+				kindPerf: kind[elm.kind],
 			};
 		});
+		//.reverse();
 
 		return performanceUser;
 	}
