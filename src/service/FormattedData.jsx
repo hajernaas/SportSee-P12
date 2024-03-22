@@ -56,13 +56,14 @@ export class PerformanceData {
 			5: "Vitesse",
 			6: "intensité",
 		};
-		const performanceUser = this.performance.map((elm) => {
-			return {
-				value: elm.value,
-				kindPerf: kind[elm.kind],
-			};
-		});
-		//.reverse();
+		const performanceUser = this.performance
+			.map((elm) => {
+				return {
+					value: elm.value,
+					kindPerf: kind[elm.kind],
+				};
+			})
+			.reverse();
 
 		return performanceUser;
 	}

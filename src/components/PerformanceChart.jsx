@@ -24,7 +24,7 @@ function PerformanceChart() {
 
 	if (error) return <Navigate to="/Error" />;
 	return (
-		<div className="performance_graph">
+		<div className="performanceGraph">
 			<ResponsiveContainer width="100%" aspect={258 / 263}>
 				<RadarChart
 					outerRadius="60%"

@@ -4,6 +4,8 @@ import { UserInfo } from "../service/Api";
 import KeyDataDetails from "../components/KeyDataDetails";
 import ActivityChart from "../components/ActivityChart";
 import AverageSessionsChart from "../components/AverageSessionsChart";
+import PerformanceChart from "../components/PerformanceChart";
+
 //import { LoaderInTo404 } from "../components/Loader";
 
 function Profile() {
@@ -66,6 +68,7 @@ function Profile() {
 
 							<div className="graph__sub-activity">
 								<AverageSessionsChart />
+								<PerformanceChart />
 							</div>
 						</div>
 
