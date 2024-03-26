@@ -10,12 +10,12 @@ export class UserData {
 	}
 
 	getUserData() {
-		//const KeyDataUser = { ...this.keyData };
+		const KeyDataUser = { ...this.keyData };
 
 		return {
 			id: this.id,
-			//keyData: KeyDataUser,
-			keyData: this.keyData,
+			keyData: KeyDataUser,
+			//keyData: this.keyData,
 			score: this.score * 100,
 			userInfos: this.userInfos,
 		};

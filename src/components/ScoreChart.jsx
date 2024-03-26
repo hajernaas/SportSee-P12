@@ -1,55 +1,79 @@
-import { RadialBar, RadialBarChart, Legend, PolarAngleAxis, ResponsiveContainer } from "recharts";
-
+import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
+import PropTypes from "prop-types";
 function ScoreChart({ score }) {
-	const dataArray = [{ name: "score", value: score }];
-
-	function LegendScore() {
-		return (
-			<div className="custom-legend" style={{ textAlign: "center" }}>
-				<span className="legend-score">{score}%</span>
-				<p>
-					de votre <br></br>objectif
-				</p>
-			</div>
-		);
-	}
+	const dataScore = [
+		{ name: "score", value: score },
+		{ name: "score restant", value: 100 - score },
+	];
 
 	return (
-		<div className="score_graph">
-			<h2> Score </h2>
-			<ResponsiveContainer width="100%" aspect={258 / 263}>
-				<RadialBarChart
-					cx="50%"
-					cy="50%"
-					innerRadius="75%"
-					outerRadius="85%"
-					startAngle={90}
-					endAngle={450}
-					barSize={10}
-					data={dataArray}
-					style={{ backgroundColor: "#FFFFFF", clipPath: "circle(37.5% at 50% 50%)" }}>
-					<PolarAngleAxis
-						type="number"
-						domain={[0, 100]}
-						angleAxisId={0}
-						tick={false}
-						fill="#FF0000"
-					/>
-					<RadialBar
-						minAngle={100}
-						background={{ fill: "#FBFBFB" }}
-						cornerRadius={5}
-						clockWise={true}
+		<div className="scoreGraph">
+			<h2 className="scoreGraph__title"> Score </h2>
+			{/* <ResponsiveContainer width="100%" aspect={258 / 263}> */}
+			<ResponsiveContainer width="100%" height="100%">
+				<PieChart width={250} height={250}>
+					<Pie
+						data={dataScore}
 						dataKey="value"
-						angleAxisId={0}
-						fill="#FF0000"
-						style={{ zIndex: 5 }}
+						fill="FF0000"
+						cx="50%"
+						cy="50%"
+						innerRadius={90}
+						outerRadius={100}
+						startAngle={90}
+						endAngle={450}>
+						{dataScore.map((elm, index) => (
+							<Cell key={`cell-${index}`} fill={elm.name === "score" ? "#FF0000" : "white"} />
+						))}
+					</Pie>
+
+					{/* Partie blanche à l'intérieur du cercle */}
+					<Pie
+						data={[{ value: 100 - score }]}
+						dataKey={"value"}
+						cx="50%"
+						cy="50%"
+						innerRadius={0}
+						outerRadius={90}
+						fill="white"
+						isAnimationActive={false}
 					/>
-					<Legend content={<LegendScore />} layout="vertical" verticalAlign="middle" />
-				</RadialBarChart>
+
+					<text
+						className="scorePercent"
+						x="50%"
+						y="40%"
+						textAnchor="middle"
+						alignmentBaseline="middle"
+						fill="black">
+						{score}%
+					</text>
+					<text
+						className="scoreText"
+						x="50%"
+						y="50%"
+						textAnchor="middle"
+						alignmentBaseline="middle"
+						fill="#74798C">
+						de votre
+					</text>
+					<text
+						className="scoreText"
+						x="50%"
+						y="60%"
+						textAnchor="middle"
+						alignmentBaseline="middle"
+						fill="#74798C">
+						objectif
+					</text>
+				</PieChart>
 			</ResponsiveContainer>
 		</div>
 	);
 }
 
 export default ScoreChart;
+
+ScoreChart.propTypes = {
+	score: PropTypes.number,
+};

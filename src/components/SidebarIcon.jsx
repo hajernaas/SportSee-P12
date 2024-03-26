@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+
 function SidebarIcon({ logo }) {
 	return (
 		<button className="sidebar__icon-img">

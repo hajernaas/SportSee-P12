@@ -3,6 +3,14 @@ import { Link } from "react-router-dom";
 import karl from "../assets/users/karl.jpg";
 import cecilia from "../assets/users/cecilia.jpg";
 
+/**
+ * Rendre page Home
+ *
+ * @category Pages
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function Home() {
 	return (
 		<main>

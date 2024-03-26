@@ -12,12 +12,13 @@
 
     &__icon {
         margin: 0;
+
     }
 
 
     &__copyright {
         position: absolute;
-        bottom: 128px;
+        bottom: 167px;
         left: -8%;
         width: max-content;
         margin: 0;
@@ -28,14 +29,14 @@
         font-size: 12px;
 
 
-        @media screen and (min-width: 1024px) {
+        /* @media screen and (min-width: 1024px) {
             position: absolute;
             bottom: 76px;
             left: 3%;
             font-weight: 400;
             font-size: 10px;
 
-        }
+        }*/
 
 
     }
