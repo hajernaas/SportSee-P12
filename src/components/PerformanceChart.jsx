@@ -4,6 +4,14 @@ import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } fro
 import { UserPerformance } from "../service/Api";
 //import Loader from "../components/Loader";
 
+/**
+ * Render a RadarChart : retrieves a user's performance (energy, endurance, etc.).
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function PerformanceChart() {
 	const { userId } = useParams();
 	const [performanceData, setPerformanceData] = useState([]);
@@ -17,8 +25,8 @@ function PerformanceChart() {
 				const data = await UserPerformance(userId);
 				console.log("PerformanceData", data);
 				setPerformanceData(data);
-			} catch (err) {
-				console.log("===== error =====", err);
+			} catch (error) {
+				console.log("===== error =====", error);
 				setError(true);
 			} finally {
 				setLoading(false);

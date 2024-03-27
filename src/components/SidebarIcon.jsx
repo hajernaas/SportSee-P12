@@ -1,6 +1,14 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
+/**
+ * Render a button icon
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function SidebarIcon({ logo }) {
 	return (
 		<button className="sidebar__icon-img">

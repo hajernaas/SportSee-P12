@@ -1,14 +1,19 @@
+/** Class representing a UserData: Formats user information and key data.**/
 export class UserData {
 	constructor(data) {
 		this.id = data.id;
 		this.keyData = data.keyData;
 		this.score = data.score || data.todayScore;
-		/*this.firstName = data.userInfos.firstName;
-		this.lastName = data.userInfos.lastName;
-		this.age = data.userInfos.age;*/
 		this.userInfos = data.userInfos;
 	}
 
+	/**
+	 * Get the getUserData value.
+	 * @return {number} id
+	 * @return {Object} keyData
+	 * @return {number} score
+	 * @return {Object} userInfos
+	 */
 	getUserData() {
 		const KeyDataUser = { ...this.keyData };
 
@@ -22,11 +27,19 @@ export class UserData {
 	}
 }
 
+/** Class representing a ActivityData: Formats user activity data..**/
 export class ActivityData {
 	constructor(data) {
 		this.userId = data.userId;
 		this.sessions = data.sessions;
 	}
+
+	/**
+	 * Get the getActivityData (objet sessions)
+	 * @return {date} day
+	 * @return {number} kg
+	 * @return {number} calories
+	 */
 
 	getActivityData() {
 		const Activity = this.sessions.map((elm, index) => {
@@ -41,12 +54,19 @@ export class ActivityData {
 	}
 }
 
+/** Class representing a PerformanceData:Formats user performance data..**/
+
 export class PerformanceData {
 	constructor(data) {
 		this.userId = data.userId;
 		this.performance = data.data;
 	}
 
+	/**
+	 * Get the getPerformanceData (objet performance)
+	 * @return {number} value
+	 * @return {string} kindPerf
+	 */
 	getPerformanceData() {
 		const kind = {
 			1: "Cardio",
@@ -68,11 +88,18 @@ export class PerformanceData {
 		return performanceUser;
 	}
 }
+
+/** Class representing a AverageSessionData: Formats user average session data...**/
 export class AverageSessionData {
 	constructor(data) {
 		this.sessions = data.sessions;
 	}
 
+	/**
+	 * Get the getAverageSessionData
+	 * @return {string} day
+	 * @return {string} sessionLength
+	 */
 	getAverageSessionData() {
 		const daysOfWeek = ["L", "M", "M", "J", "V", "S", "D"];
 		const averageSessionData = this.sessions.map((day, index) => {

@@ -5,6 +5,14 @@ import PropTypes from "prop-types";
 import { UserAverageSessions } from "../service/Api";
 //import Loader from "../components/Loader";
 
+/**
+ * Render the LineChart : retrieves the average sessions of a user per da
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function AverageSessionsChart() {
 	const { userId } = useParams();
 	const [averageSessionsData, setAverageSessions] = useState([]);
@@ -18,7 +26,8 @@ function AverageSessionsChart() {
 				const data = await UserAverageSessions(userId);
 				setAverageSessions(data);
 			} catch (error) {
-				setError(error.message);
+				console.log("===== error =====", error);
+				setError(true);
 			} finally {
 				setLoading(false);
 			}
@@ -104,6 +113,15 @@ CustomTooltip.propTypes = {
 	active: PropTypes.bool,
 	payload: PropTypes.array,
 };
+
+/**
+ * custom Component as the cursor prop.
+ *
+ * @param {Object[]} points
+ * @param {Number} points[].x
+ * @param {Number} points[].y
+ * @returns {Component} Rectangle
+ */
 
 const CustomCursor = ({ points }) => {
 	return <Rectangle fill="#000000" opacity={0.1} x={points[0].x} width={600} height={500} />;

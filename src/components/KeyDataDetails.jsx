@@ -5,6 +5,15 @@ import proteineIcon from "../assets/proteine-icon.svg";
 import glucideIcon from "../assets/glucide-icon.svg";
 import lipidIcon from "../assets/lipide-icon.svg";
 
+/**
+ * Render a KeyDataDetails (calorie, macronutrient, etc.).
+ *
+ * @category Components
+ * @component
+ * @param  {object} {keyData} count of calories, lipids, protein....
+ * @returns { React.Component } A React component
+ */
+
 function KeyDataDetails({ keyData }) {
 	return (
 		<div className="KeydataContainer">

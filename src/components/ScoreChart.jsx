@@ -1,5 +1,13 @@
 import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
 import PropTypes from "prop-types";
+
+/**
+ * Render the PieChart : to represent the score as a percentage
+ * @category Components
+ * @component
+ * @param  {number} {score}
+ * @returns { React.Component } A React component
+ */
 function ScoreChart({ score }) {
 	const dataScore = [
 		{ name: "score", value: score },

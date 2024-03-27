@@ -1,11 +1,7 @@
-//import data from "../mock/data.json";
-//import { USER_MAIN_DATA } from "../data/data.js";
 import dataUser from "../mock/user-main-data.json";
 import dataActivity from "../mock/user-activity.json";
 import dataAverageSessions from "../mock/user-average-sessions.json";
 import dataPerformance from "../mock/user-performance.json";
-
-//import { USER_ACTIVITY } from "../data/data";
 
 import {
 	UserData,
@@ -14,16 +10,25 @@ import {
 	PerformanceData,
 } from "../service/FormattedData";
 
-//const isMockData = process.env.REACT_APP_USE_MOCK_DATA === "true";
 const isMockData = true;
 const API_URL = process.env.REACT_APP_API_URL;
-console.log("is", isMockData);
+
+/**
+ *This function will retrieve the simulated data.if the operation fails, it will retrieve data from the API
+ * Also returns objects regarding user information in the case of success and errors in the case of failure
+ * @category API
+ * @returns {Object}
+ */
+
+/**
+ * Function UserInfo - get user data.
+ *
+ * @param {string} userId - The id value of user
+ **/
 
 export async function UserInfo(userId) {
 	if (isMockData) {
-		//console.log("is", isMockData);
 		const mockData = dataUser.find((user) => user.id === Number(userId));
-		//console.log("mockData", mockData);
 		if (!mockData) throw new Error("User not found in mock data");
 		return new UserData(mockData).getUserData();
 	} else {
@@ -39,10 +44,15 @@ export async function UserInfo(userId) {
 	}
 }
 
+/**
+ * Function UserActivity - get user activity.
+ *
+ * @param {string} userId - The id value of user
+ **/
+
 export async function UserActivity(userId) {
 	if (isMockData) {
 		const mockData = dataActivity.find((activity) => activity.userId === Number(userId));
-		//const mockData = USER_ACTIVITY.find((activity) => activity.userId === Number(userId));
 		if (!mockData) throw new Error("Activity not found in mock data");
 		return new ActivityData(mockData).getActivityData();
 	} else {
@@ -57,6 +67,12 @@ export async function UserActivity(userId) {
 		}
 	}
 }
+
+/**
+ * Function UserAverageSessions - get data of average sessions.
+ *
+ * @param {string} userId - The id value of user
+ **/
 
 export async function UserAverageSessions(userId) {
 	if (isMockData) {
@@ -75,6 +91,12 @@ export async function UserAverageSessions(userId) {
 		}
 	}
 }
+
+/**
+ * Function UserAverageSessions -  get user performance.
+ *
+ * @param {string} userId - The id value of user
+ **/
 
 export async function UserPerformance(userId) {
 	if (isMockData) {

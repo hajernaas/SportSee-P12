@@ -4,6 +4,14 @@ import swimming from "../assets/swim-icon.svg";
 import biking from "../assets/biking-icon.svg";
 import weightLifting from "../assets/weightLifting-icon.svg";
 
+/**
+ * Render the sidebar with icons and copyright
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function Sidebar() {
 	return (
 		<div className="sidebar">

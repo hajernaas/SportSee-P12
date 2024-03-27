@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-//cette page est renvoyée pour chaque route inexistante
+
+/**
+ * Rendre page Home :renvoyer pour chaque route inexistante
+ *
+ * @category Pages
+ * @component
+ * @returns { React.Component } A React component
+ */
 function Error() {
 	return (
 		<main>

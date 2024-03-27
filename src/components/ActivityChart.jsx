@@ -2,7 +2,16 @@ import React, { useState, useEffect } from "react";
 import { UserActivity } from "../service/Api";
 import { Navigate, useParams } from "react-router-dom";
 import { BarChart, CartesianGrid, Tooltip, XAxis, YAxis, Bar, ResponsiveContainer } from "recharts";
+import PropTypes from "prop-types";
 //import Loader from "../components/Loader";
+
+/**
+ * Render the BarChart : retrieves a user's activity day by day with kilograms and calories.
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
 
 function ActivityChart() {
 	const { userId } = useParams();
@@ -16,8 +25,8 @@ function ActivityChart() {
 			try {
 				const data = await UserActivity(userId);
 				setActivity(data);
-			} catch (err) {
-				console.log("===== error =====", err);
+			} catch (error) {
+				console.log("===== error =====", error);
 				setError(true);
 			} finally {
 				setLoading(false);
@@ -27,25 +36,11 @@ function ActivityChart() {
 		fetchDataActivity();
 	}, [userId]);
 
-	console.log("fetched", activityData);
-
 	if (error) return <Navigate to="/Error" />;
 
 	if (isLoading) {
 		return <section className="dashborad">{<h2 className="center">Chargement...</h2>}</section>;
 	}
-
-	const CustomTooltip = ({ active, payload }) => {
-		if (active && payload && payload.length) {
-			return (
-				<div className="TooltipBox">
-					<p>{`${payload[0].value}kg`}</p>
-					<p>{`${payload[1].value}Kcal`}</p>
-				</div>
-			);
-		}
-		return null;
-	};
 
 	return (
 		<>
@@ -97,7 +92,6 @@ function ActivityChart() {
 								<YAxis
 									dataKey="kg"
 									domain={["dataMin-5", "dataMax+10"]}
-									//domain={["dataMin-5", "dataMax+10"]}
 									orientation="right"
 									yAxisId="kilogram"
 									tickCount={3}
@@ -136,5 +130,28 @@ function ActivityChart() {
 		</>
 	);
 }
+
+/**
+ * Custom barchart tooltip
+ * @param {Boolean} active Tooltip status
+ * @param {array} payload Contain barchart datas (user weight and user calories)
+ * @returns {Component} div with data to display
+ **/
+const CustomTooltip = ({ active, payload }) => {
+	if (active && payload && payload.length) {
+		return (
+			<div className="TooltipBox">
+				<p>{`${payload[0].value}kg`}</p>
+				<p>{`${payload[1].value}Kcal`}</p>
+			</div>
+		);
+	}
+	return null;
+};
+
+CustomTooltip.propTypes = {
+	active: PropTypes.bool,
+	payload: PropTypes.array,
+};
 
 export default ActivityChart;

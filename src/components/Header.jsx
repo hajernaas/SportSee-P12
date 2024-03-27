@@ -1,6 +1,14 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/logo-sportsee.svg";
 
+/**
+ * Render the Header with logo et and navbar
+ *
+ * @category Components
+ * @component
+ * @returns { React.Component } A React component
+ */
+
 function Header() {
 	return (
 		<header className="nav-wrapper">
