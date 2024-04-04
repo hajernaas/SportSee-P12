@@ -14,35 +14,44 @@ function ScoreChart({ score }) {
 		{ name: "score restant", value: 100 - score },
 	];
 
+	if (score === null) {
+		return (
+			<div className="scoreGraph">
+				<p>Données innaccessibles.</p>
+			</div>
+		);
+	}
+
 	return (
 		<div className="scoreGraph">
 			<h2 className="scoreGraph__title"> Score </h2>
-			{/* <ResponsiveContainer width="100%" aspect={258 / 263}> */}
-			<ResponsiveContainer width="100%" height="100%">
-				<PieChart width={250} height={250}>
+			<ResponsiveContainer width="100%" aspect={258 / 263}>
+				<PieChart>
 					<Pie
 						data={dataScore}
 						dataKey="value"
 						fill="FF0000"
 						cx="50%"
 						cy="50%"
-						innerRadius={90}
-						outerRadius={100}
 						startAngle={90}
-						endAngle={450}>
+						endAngle={450}
+						innerRadius="70%"
+						outerRadius="80%"
+						cornerRadius="50%">
 						{dataScore.map((elm, index) => (
 							<Cell key={`cell-${index}`} fill={elm.name === "score" ? "#FF0000" : "white"} />
 						))}
 					</Pie>
 
-					{/* Partie blanche à l'intérieur du cercle */}
+					{/* zone blanche à l'intérieur du cercle */}
 					<Pie
 						data={[{ value: 100 - score }]}
 						dataKey={"value"}
 						cx="50%"
 						cy="50%"
-						innerRadius={0}
-						outerRadius={90}
+						startAngle={210}
+						endAngle={-210}
+						outerRadius="70%"
 						fill="white"
 						isAnimationActive={false}
 					/>

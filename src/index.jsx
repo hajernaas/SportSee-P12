@@ -9,8 +9,8 @@ import Sidebar from "./components/Sidebar";
 import "./sass/main.scss";
 
 /**
- * Fichier de routing et le composant Routes qui englobe toutes les routes déclarés 
-   Header, Sidebar et les pages de l'application
+ *  Routing file and the Routes component which encompasses all declared routes
+ *  Header, Sidebar and application pages
  *
  * @category Router
  * @component
@@ -22,12 +22,14 @@ root.render(
 	<React.StrictMode>
 		<Router>
 			<Header />
-			<Sidebar />
-			<Routes>
-				<Route path="/" element={<Home />} />
-				<Route path="/user/:userId" element={<Profile />} />
-				<Route path="*" element={<Error />} />
-			</Routes>
+			<main>
+				<Sidebar />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/user/:userId" element={<Profile />} />
+					<Route path="*" element={<Error />} />
+				</Routes>
+			</main>
 		</Router>
 	</React.StrictMode>
 );

@@ -4,23 +4,24 @@
     flex-direction: column;
     gap: $gap2;
     text-align: center;
-    /* margin: 100px auto;
-    padding: 40px;*/
+    margin: 100px auto;
+    padding: 40px;
 
 
-    @media screen and (min-width: 1024px) {
-        gap: $gap1;
+    @media screen and (max-width: 1024px) {
+        gap: 113px;
+        margin: 36px auto;
     }
 
     &__title {
-        font-size: $f-size-error-mobile;
+        font-size: 145px;
         font-weight: $bold-font-weight;
         color: $secondary-color;
         @include dimension($width: 198px, $height: 99px);
         margin-top: 70px;
 
-        @media screen and (min-width: 1024px) {
-            font-size: $f-size-error-desktop;
+        @media screen and (max-width: 1024px) {
+            font-size: 210px;
             // margin-top: 139px;
             @include dimension($width: 597px, $height: 263px);
 
@@ -29,25 +30,25 @@
 
     &__text {
         text-align: center;
-        font-size: $f4-font-size;
+        font-size: 32px;
         font-weight: $medium-font-weight;
         color: $secondary-color;
 
-        @media screen and (min-width: 1024px) {
+        /* @media screen and (max-width: 1024px) {
             font-size: $f2-font-size;
-        }
+        }*/
     }
 
     &__link {
         text-decoration: underline;
-        font-size: $f5-font-size ;
+        font-size: 30px;
         font-weight: $medium-font-weight;
         margin-bottom: 50px;
         text-align: center;
 
-        @media screen and (min-width: 1024px) {
+        @media screen and (max-width: 1024px) {
             //margin-bottom: 139px;
-            font-size: $f4-font-size;
+            font-size: 19px;
         }
 
     }

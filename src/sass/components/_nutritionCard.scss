@@ -1,6 +1,6 @@
 .NutritionCard {
 
-    width: 100%;
+    /* width: 100%;
     height: 124px;
     background: #FBFBFB;
     display: flex;
@@ -8,33 +8,41 @@
     justify-content: flex-start;
     border-radius: 5px;
     align-items: center;
-    //padding-left: 12px;
+   
     padding-left: 8px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);*/
+    border-radius: 5px;
+    padding: 0 32px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.05);
+    display: flex;
+    width: 258px;
+    height: 19%;
+    // height: 125px;
+    background-color: #F7F7F7;
+    align-items: center;
 
-    /* @media screen and (min-width: 1024px) {
-        width: 100%;
-        height: 89px;
-    }*/
 
-    img {
-        // padding: 25px;
+
+    /* img {
+       
         padding: 32px;
         border-radius: 5px;
 
 
-    }
+    }*/
 
     &__infos {
-        display: flex;
+        /*display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 2px;
+        gap: 2px;*/
+        margin-left: 24px;
 
         p {
             font-size: 20px;
             font-weight: 700;
-            margin: 0;
+            // margin: 0;
+            margin-bottom: 7px;
         }
 
         span {

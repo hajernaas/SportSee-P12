@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo-sportsee.svg";
 
 /**
@@ -11,15 +11,25 @@ import logo from "../assets/logo-sportsee.svg";
 
 function Header() {
 	return (
-		<header className="nav-wrapper">
-			<Link to="/">
-				<img src={logo} alt="Logo SportSee " className="nav-logo vertical-center" />
+		<header className="header-wrapper">
+			<Link to="/" className="header-wrapper__logo">
+				<img src={logo} alt="Logo SportSee " />
 			</Link>
-			<nav className="nav vertical-center">
-				<NavLink to="/">Accueil</NavLink>
-				<NavLink to="#">Profil</NavLink>
-				<NavLink to="#">Réglage</NavLink>
-				<NavLink to="#">Communauté</NavLink>
+			<nav className="header-wrapper__nav">
+				<ul className="header-wrapper__nav-ul">
+					<li>
+						<Link to="/">Accueil</Link>
+					</li>
+					<li>
+						<Link to="#">Profil</Link>
+					</li>
+					<li>
+						<Link to="#">Réglage</Link>
+					</li>
+					<li>
+						<Link to="#">Communauté</Link>
+					</li>
+				</ul>
 			</nav>
 		</header>
 	);

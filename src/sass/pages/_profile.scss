@@ -1,29 +1,56 @@
+.sectionContainer {
+    display: flex;
+    /* height: 100%;
+    margin-top: -30px;*/
+}
+
+
+
 .dashborad {
 
+    /*   width: 84%;
+    margin-top: 30px;*/
+
+    //   margin-left: 5%;
+
+    margin: 40px auto;
+    padding: 0 5%;
+    width: 85%;
+    /*  margin-top: 25px;
+    margin-left: -2%;*/
+
+    @media (max-width: 1024px) {
+        margin: 20px auto;
+        padding: 0 4%;
+        width: 95%;
+        // margin: 0px;
+    }
 
 
     &__bloc {
-        width: 100%;
-        padding: 35px 40px;
+        /*   width: 100%;
+        padding: 35px 40px;*/
 
         &--title {
+            margin-bottom: 40px;
 
             h1 {
                 font-size: 48px;
-                margin-top: 50px;
+                //margin-top: 50px;
                 font-weight: 500;
+                margin: 0.67em 0;
 
-                @media screen and (min-width: 1024px) {
+                /* @media screen and (min-width: 1024px) {
                     font-size: 40px;
                     margin-top: 30px;
 
 
-                }
+                }*/
             }
 
             span {
                 color: #FF0101;
-                margin-left: 9px;
+                // margin-left: 9px;
 
             }
 
@@ -41,11 +68,11 @@
             margin-top: 70px;
             margin-bottom: 50px;
 
-            @media screen and (max-width: 1200px) {
-                // margin-bottom: 0;
+            /*   @media screen and (max-width: 1200px) {
+            
                 margin-top: 40px;
 
-            }
+            }*/
 
             .graph {
                 display: flex;

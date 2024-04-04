@@ -1,4 +1,4 @@
-import SidebarIcon from "../components/SidebarIcon";
+import { Link } from "react-router-dom";
 import yoga from "../assets/yoga-icon.svg";
 import swimming from "../assets/swim-icon.svg";
 import biking from "../assets/biking-icon.svg";
@@ -15,12 +15,30 @@ import weightLifting from "../assets/weightLifting-icon.svg";
 function Sidebar() {
 	return (
 		<div className="sidebar">
-			<div className="sidebar__icon center">
-				<SidebarIcon logo={yoga} />
-				<SidebarIcon logo={swimming} />
-				<SidebarIcon logo={biking} />
-				<SidebarIcon logo={weightLifting} />
-			</div>
+			<nav className="sidebar__nav">
+				<ul className="sidebar__nav-ul">
+					<li>
+						<Link to="#">
+							<img src={yoga} alt="logo yoga" />
+						</Link>
+					</li>
+					<li>
+						<Link to="#">
+							<img src={swimming} alt="logo nage " />
+						</Link>
+					</li>
+					<li>
+						<Link to="#">
+							<img src={biking} alt="logo vélo " />
+						</Link>
+					</li>
+					<li>
+						<Link to="#">
+							<img src={weightLifting} alt="logo altère" />
+						</Link>
+					</li>
+				</ul>
+			</nav>
 			<p className="sidebar__copyright">Copyright, SportSee 2020</p>
 		</div>
 	);

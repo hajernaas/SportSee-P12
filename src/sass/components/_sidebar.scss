@@ -1,23 +1,86 @@
 .sidebar {
-    z-index: 1;
+    /*z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
-    // width: 7.3125rem;
     width: 117px;
     height: 100%;
     overflow: hidden;
     background: $backgroundDark;
-    text-align: center;
+    text-align: center;*/
+    background-color: $backgroundDark;
+    width: 110px;
+    min-height: calc(100dvh - 90px);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &__icon {
-        margin: 0;
+    @media (max-width: 1320px) {
+
+        min-height: calc(100dvh - 68px);
+        // min-height: calc(100dvh - -37px);
+
+    }
+
+    &__nav {
+        // margin: 0;
+        // margin-bottom: 240px;
+        margin-bottom: 227px;
+
+        @media (max-width: 1320px) {
+
+            margin-bottom: 210px;
+        }
+
+        &-ul {
+            //margin: 200px 0 0;
+            margin: 260px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 316px;
+            width: 64px;
+
+            @media (max-width: 1320px) {
+
+
+
+                margin: 235px 0 0;
+                width: 40px;
+                height: 280px;
+
+
+            }
+
+            li {
+                background-color: white;
+                width: 100%;
+                height: 64px;
+                border-radius: 6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                @media (max-width: 1320px) {
+
+
+
+                    background-color: white;
+                    width: 100%;
+                    height: 40px;
+
+
+                }
+            }
+        }
 
     }
 
 
     &__copyright {
-        position: absolute;
+        /*position: absolute;
         bottom: 167px;
         left: -8%;
         width: max-content;
@@ -26,18 +89,18 @@
         color: $white;
 
         font-weight: 500;
+        font-size: 12px;*/
+        color: #fff;
         font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        transform: rotate(-90deg) translateX(0%);
+        width: 150px;
 
 
-        /* @media screen and (min-width: 1024px) {
-            position: absolute;
-            bottom: 76px;
-            left: 3%;
-            font-weight: 400;
-            font-size: 10px;
-
-        }*/
 
 
     }
+
+
 }

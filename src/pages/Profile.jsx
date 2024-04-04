@@ -6,7 +6,6 @@ import ActivityChart from "../components/ActivityChart";
 import AverageSessionsChart from "../components/AverageSessionsChart";
 import PerformanceChart from "../components/PerformanceChart";
 import ScoreChart from "../components/ScoreChart";
-//import Loader from "../components/Loader";
 
 /**
  * Page profil d'utilisateur
@@ -20,11 +19,8 @@ function Profile() {
 	const { userId } = useParams();
 	const [userData, setUser] = useState({});
 	const [error, setError] = useState(false);
-	const [isLoading, setLoading] = useState(true);
-	console.log("isLoading", isLoading);
 
 	useEffect(() => {
-		setLoading(true);
 		async function fetchDataUser() {
 			try {
 				const data = await UserInfo(userId);
@@ -32,8 +28,6 @@ function Profile() {
 			} catch (err) {
 				console.log("===== error =====", err);
 				setError(true);
-			} finally {
-				setLoading(false);
 			}
 		}
 
@@ -42,22 +36,14 @@ function Profile() {
 
 	if (error) return <Navigate to="/Error" />;
 
-	if (isLoading) {
-		return <section className="dashborad">{<h2 className="chargement">Chargement...</h2>}</section>;
-	}
-
 	return (
 		<section className="dashborad">
-			{/* {isLoading ? ( */}
-			{/* <Loader /> */}
-			{/* ) : ( */}
 			<>
 				{userData && (
 					<div className="dashborad__bloc">
 						<div className="dashborad__bloc--title">
 							<h1>
-								Bonjour
-								<span>{userData?.userInfos?.firstName}</span>
+								Bonjour <span>{userData?.userInfos?.firstName}</span>
 							</h1>
 							<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
 						</div>
@@ -71,7 +57,6 @@ function Profile() {
 									<AverageSessionsChart />
 									<PerformanceChart />
 									<ScoreChart score={userData?.score} />
-									{/* <ScoreComp score={userData?.score} /> */}
 								</div>
 							</div>
 
@@ -82,7 +67,6 @@ function Profile() {
 					</div>
 				)}
 			</>
-			{/* )} */}
 		</section>
 	);
 }

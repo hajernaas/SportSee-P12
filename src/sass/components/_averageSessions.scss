@@ -1,10 +1,10 @@
 .containerAverage {
 
-    /* width: 31%;
-    height: 100%;*/
-    width: 258px;
-    height: 263px;
-
+    width: 31%;
+    height: 100%;
+    /*  width: 258px;*/
+    // height: 263px;
+    //  height: 240px;
     background-color: #FF0000;
     border-radius: 5px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
@@ -24,6 +24,7 @@
     max-width: 147px;
     opacity: 0.504;
     color: #FFF;
+    width: 66%;
 
     /* @media screen and (max-width: 1200px) {
         margin-top: 0.8rem;
@@ -36,9 +37,11 @@
     background-color: white;
     color: black;
     padding: 1px 7px;
-    height: 25px;
-    width: 39px;
-    height: 25px;
+    /*  height: 25px;
+    width: 39px;*/
+    height: 35px;
+    width: 55px;
+
 
     p {
         font-size: 12px;
