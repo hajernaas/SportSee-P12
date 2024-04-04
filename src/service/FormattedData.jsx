@@ -14,12 +14,10 @@ export class UserData {
 	 * @return {number} score
 	 * @return {Object} userInfos
 	 */
-	getUserData() {
-		//const KeyDataUser = { ...this.keyData };
 
+	getUserData() {
 		return {
 			id: this.id,
-			//keyData: KeyDataUser,
 			keyData: this.keyData,
 			score: this.score * 100,
 			userInfos: this.userInfos,

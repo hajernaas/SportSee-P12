@@ -22,7 +22,7 @@
 
         @media screen and (max-width: 1024px) {
             font-size: 210px;
-            // margin-top: 139px;
+
             @include dimension($width: 597px, $height: 263px);
 
         }
@@ -33,10 +33,6 @@
         font-size: 32px;
         font-weight: $medium-font-weight;
         color: $secondary-color;
-
-        /* @media screen and (max-width: 1024px) {
-            font-size: $f2-font-size;
-        }*/
     }
 
     &__link {
@@ -47,7 +43,7 @@
         text-align: center;
 
         @media screen and (max-width: 1024px) {
-            //margin-bottom: 139px;
+
             font-size: 19px;
         }
 

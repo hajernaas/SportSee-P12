@@ -1,56 +1,33 @@
-.sectionContainer {
-    display: flex;
-    /* height: 100%;
-    margin-top: -30px;*/
-}
-
-
-
 .dashborad {
-
-    /*   width: 84%;
-    margin-top: 30px;*/
-
-    //   margin-left: 5%;
 
     margin: 40px auto;
     padding: 0 5%;
     width: 85%;
-    /*  margin-top: 25px;
-    margin-left: -2%;*/
 
     @media (max-width: 1024px) {
         margin: 20px auto;
         padding: 0 4%;
         width: 95%;
-        // margin: 0px;
+
     }
 
 
     &__bloc {
-        /*   width: 100%;
-        padding: 35px 40px;*/
+
 
         &--title {
             margin-bottom: 40px;
 
             h1 {
                 font-size: 48px;
-                //margin-top: 50px;
                 font-weight: 500;
                 margin: 0.67em 0;
 
-                /* @media screen and (min-width: 1024px) {
-                    font-size: 40px;
-                    margin-top: 30px;
 
-
-                }*/
             }
 
             span {
                 color: #FF0101;
-                // margin-left: 9px;
 
             }
 
@@ -68,11 +45,7 @@
             margin-top: 70px;
             margin-bottom: 50px;
 
-            /*   @media screen and (max-width: 1200px) {
-            
-                margin-top: 40px;
 
-            }*/
 
             .graph {
                 display: flex;
@@ -102,25 +75,10 @@
                 max-width: 258px;
                 width: 25%;
             }
-
         }
-
-
-
-
     }
 
-
 }
-
-
-/*.errorMessage {
-    font-family: "Roboto";
-    font-size: 24px;
-    color: #ff0101;
-    text-align: center;
-    margin-top: 50px;
-}*/
 
 
 @keyframes rotate {
@@ -131,33 +89,4 @@
     to {
         transform: rotate(360deg);
     }
-}
-
-@keyframes loader_fade_out {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0);
-    }
-}
-
-.chargement {
-
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    //   border: 6px solid #344566;
-    // border-bottom-color: transparent;
-    // border-radius: 22px;
-
-    // animation: rotate 5s ease-in-out 2S both;
-
-    /* animation: loader_fade_out 7s ease-in-out 2s forwards;
-
-    height: 0;
-    width: 0;
-*/
 }

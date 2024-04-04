@@ -1,12 +1,11 @@
 .login__nav {
-    //  height: calc(100% - 90px);
+
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     position: fixed;
     inset: 0;
-
 
     &--link {
         margin: 3rem;
@@ -18,7 +17,7 @@
         }
 
         p {
-            // color: #E60000;
+
             text-align: center;
             margin-top: 0.5rem;
             font-weight: 500;

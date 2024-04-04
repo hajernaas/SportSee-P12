@@ -1,3 +1,51 @@
+#### Projet 12 de la formation "Développeur d'application - JavaScript React" par OpenClassrooms
+
+# Développez un tableau de bord d'analytics avec React
+
+### Scénario
+
+Vous travaillez en tant que développeur chez SportSee, une startup dédiée au coaching sportif. En pleine croissance,
+l’entreprise va aujourd’hui lancer une nouvelle version de la page profil de l’utilisateur. Cette page va notamment
+permettre à l’utilisateur de suivre le nombre de sessions réalisées ainsi que le nombre de calories brûlées.
+
+### Objectifs
+
+• Suivre les user stories figurant dans les TODO du Kanban
+• Utiliser une librairie pour les graphiques (D3 ou Recharts)
+• Respecter la maquette Figma
+
+### Compétences évaluées
+
+• Assurer la qualité des données d'une application
+• Développer des éléments graphiques avancés à l'aide de bibliothèques JavaScript
+• Interagir avec un service Web
+
+### Installation
+
+## Frontend
+
+Cloner le repository via :
+git clone https://github.com/hajernaas/SportSee-P12.git
+Lancer le frontend comme suit :
+cd sportsee_p12
+npm install
+npm start
+
+Le site sera alors accessible en local via l'URL : http://localhost:3001
+
+On pourra ensuite voir deux profils : 12 (Karl) ou 18 (Cecilia)
+
+## Backend
+
+Cloner le repository via :
+git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard.git
+Lancer le backend comme suit :
+cd P9-front-end-dashboard
+npm install
+npm start
+L'API du backend sera alors accessible en local via l'URL : http://localhost:3000
+La liste des endpoints possibles se trouve sur (https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

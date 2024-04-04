@@ -4,17 +4,15 @@
 
 // _base.scss
 @import "./base/typography";
-// @import "./base/normalize";
+
 
 //_components.scss
 @import "./components/header";
 @import "./components/sidebar";
-@import "./components/sidebarIcon";
 @import "./components/activityChart";
 @import "./components/nutritionCard";
 @import "./components/keydataDetails";
 @import "./components/averageSessions";
-@import "./components/loader";
 @import "./components/performance";
 @import "./components/score";
 
