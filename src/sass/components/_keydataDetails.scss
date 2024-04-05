@@ -1,7 +1,5 @@
 .KeydataContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex-d($justify: space-between, $direction: column);
     height: 100%;
 
 }

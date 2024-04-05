@@ -1,5 +1,4 @@
 .error {
-
     @include flex-align($align: center);
     flex-direction: column;
     gap: $gap2;
@@ -9,20 +8,19 @@
 
 
     @media screen and (max-width: 1024px) {
-        gap: 113px;
-        margin: 36px auto;
+        margin: 15px auto;
+
     }
 
     &__title {
-        font-size: 145px;
+        font-size: $f1-size-error-desktop;
         font-weight: $bold-font-weight;
         color: $secondary-color;
         @include dimension($width: 198px, $height: 99px);
         margin-top: 70px;
 
         @media screen and (max-width: 1024px) {
-            font-size: 210px;
-
+            font-size: $f2-size-error-desktop;
             @include dimension($width: 597px, $height: 263px);
 
         }
@@ -30,21 +28,21 @@
 
     &__text {
         text-align: center;
-        font-size: 32px;
+        font-size: $f3-font-size;
         font-weight: $medium-font-weight;
         color: $secondary-color;
     }
 
     &__link {
         text-decoration: underline;
-        font-size: 30px;
+        font-size: $f4-font-size;
         font-weight: $medium-font-weight;
         margin-bottom: 50px;
         text-align: center;
 
         @media screen and (max-width: 1024px) {
 
-            font-size: 19px;
+            font-size: $f7-font-size;
         }
 
     }

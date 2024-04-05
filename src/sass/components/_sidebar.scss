@@ -1,16 +1,14 @@
 .sidebar {
+
     background-color: $backgroundDark;
     width: 110px;
     min-height: calc(100dvh - 90px);
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
+    box-shadow: $menu-box-shadow;
     flex-direction: column;
-    align-items: center;
+    @include flex-align($align: center);
 
     @media (max-width: 1320px) {
-
-        min-height: calc(100dvh - 68px);
-
+        min-height: calc(100dvh - 70px);
 
     }
 
@@ -23,43 +21,32 @@
             margin-bottom: 210px;
         }
 
+
+
+
         &-ul {
 
             margin: 260px 0 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            @include flex-d($justify: space-between, $direction: column);
             align-items: center;
-            height: 316px;
-            width: 64px;
+            @include dimension($width: 64px, $height: 316px);
 
             @media (max-width: 1320px) {
 
-
-
-                margin: 235px 0 0;
-                width: 40px;
-                height: 280px;
-
+                margin: 188px 0 0;
+                @include dimension($width: 40px, $height: 280px);
 
             }
 
             li {
-                background-color: white;
-                width: 100%;
-                height: 64px;
-                border-radius: 6px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
+                background-color: $white;
+                border-radius: $sec-radius;
+                @include flex($justify: center, $align: center);
+                @include dimension($width: 100%, $height: 64px);
 
                 @media (max-width: 1320px) {
-
-
-
                     background-color: white;
-                    width: 100%;
-                    height: 40px;
+                    @include dimension($width: 100%, $height: 40px);
 
 
                 }
@@ -71,12 +58,18 @@
 
     &__copyright {
 
-        color: #fff;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 500;
+        color: $white;
+        font-size: $f12-font-size;
+        font-weight: $medium-font-weight;
         transform: rotate(-90deg) translateX(0%);
         width: 150px;
+        font-style: normal;
+
+        @media (max-width: 1320px) {
+
+            transform: rotate(-90deg) translateX(50%);
+
+        }
 
     }
 

@@ -1,49 +1,39 @@
 .scoreGraph {
-    width: 31%;
-    height: 100%;
-    background-color: #FBFBFB;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
     position: relative;
-
-
+    @include dimension($width: 31%, $height: 100%);
+    background-color: $backgroundLight;
+    border-radius: $ter-radius;
+    box-shadow: $graph-box-shadow;
 
     &__title {
         position: absolute;
         top: 12px;
         left: 21px;
-        font-size: 15px;
-        font-weight: 500;
         line-height: 24px;
+        font-size: $f10-font-size;
+        font-weight: $medium-font-weight;
         color: $lightBlack;
 
         @media screen and (max-width: 1285px) {
-
-
-            font-size: 12px;
-
+            font-size: $f12-font-size;
+            top: 8px;
+            left: 11px
         }
     }
 }
 
 
-
-
-
-
 .scorePercent {
-
-    font-size: 26px;
-    font-weight: 700;
+    font-size: $f5-font-size;
+    font-weight: $bold-font-weight;
+    color: $lightDark;
     line-height: 26px;
     text-align: center;
-    color: $lightDark;
 }
 
 .scoreText {
-
-    font-size: 16px;
-    font-weight: 500;
+    font-size: $f9-font-size;
+    font-weight: $medium-font-weight;
     line-height: 26px;
     text-align: center;
 

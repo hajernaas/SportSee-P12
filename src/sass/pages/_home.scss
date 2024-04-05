@@ -1,26 +1,26 @@
 .login__nav {
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    @include flex-d($justify: center, $direction: row);
     align-items: center;
     position: fixed;
     inset: 0;
+    padding-left: 110px;
+
+
 
     &--link {
-        margin: 3rem;
+        margin: 48px;
 
         img {
-            border-radius: 15px;
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+            border-radius: $main-radius;
+            box-shadow: $graph-box-shadow;
             width: 150px;
         }
 
         p {
 
             text-align: center;
-            margin-top: 0.5rem;
-            font-weight: 500;
+            margin-top: 8px;
+            font-weight: $medium-font-weight;
         }
 
         &:hover {

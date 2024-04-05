@@ -38,7 +38,7 @@ export async function UserInfo(userId) {
 			const data = await response.json();
 			return new UserData(data.data).getUserData();
 		} catch (error) {
-			console.error("There has been a problem with your fetch operation:", error);
+			console.error("fetch operation error:", error);
 			throw error;
 		}
 	}

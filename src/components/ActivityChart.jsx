@@ -54,7 +54,6 @@ function ActivityChart() {
 							</li>
 						</ul>
 					</div>
-					{/* <ResponsiveContainer> */}
 					<ResponsiveContainer width="100%" height="100%">
 						<BarChart
 							data={activityData}
@@ -98,14 +97,14 @@ function ActivityChart() {
 								dataKey="kg"
 								fill="#282D30"
 								barSize={10}
-								radius={[30, 30, 0, 0]}
+								radius={[50, 50, 0, 0]}
 								yAxisId="kilogram"
 							/>
 							<Bar
 								dataKey="calories"
 								fill="#E60000"
 								barSize={10}
-								radius={[30, 30, 0, 0]}
+								radius={[50, 50, 0, 0]}
 								yAxisId="calories"
 							/>
 						</BarChart>

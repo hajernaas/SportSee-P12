@@ -15,6 +15,12 @@
     align-items: $align;
 }
 
+@mixin flex-d($justify, $direction) {
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
+
 @mixin flex-justify($justify) {
     display: flex;
     justify-content: $justify;

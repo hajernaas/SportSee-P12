@@ -1,12 +1,15 @@
 .performanceGraph {
-    width: 31%;
-    height: 100%;
-    background-color: #282D30;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    @include dimension($width: 31%, $height: 100%);
+    background-color: $lightDark;
+    border-radius: $ter-radius;
+    box-shadow: $graph-box-shadow;
 
-    &__kindPerf {
-        font-size: 10px;
+    @media (max-width: 1024px) {
+        &__kindPerf {
+            font-size: $f13-font-size;
+        }
     }
+
+
 
 }

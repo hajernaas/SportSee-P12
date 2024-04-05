@@ -1,14 +1,12 @@
 .header-wrapper {
-    display: flex;
-    align-items: center;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    @include flex-align($align: center);
+    box-shadow: $menu-box-shadow;
     height: 90px;
-    background-color: #020203;
-    color: white;
+    background-color: $backgroundDark;
+    color: $white;
 
-    @media (max-width: 1320px) {
-        height: 68px;
-
+    @media (max-width: 1024px) {
+        height: 70px;
 
     }
 
@@ -16,30 +14,27 @@
 
         margin: 0 40px 0 28px;
 
-        @media (max-width: 1320px) {
+        @media (max-width: 1024px) {
             margin-left: 8px;
+            margin-top: 6px;
         }
     }
 
     nav {
         width: 100%;
 
-
         ul {
-
-            font-size: 1.5rem;
-            margin-right: 13%;
+            @include flex-justify($justify: space-around);
+            font-size: $f6-font-size;
             margin-right: 5%;
-            display: flex;
-            justify-content: space-around;
             width: 80%;
 
-            @media (max-width: 1320px) {
-                font-size: 1.2rem;
+            @media (max-width: 1024px) {
+                font-size: $f7-font-size;
             }
 
             a {
-                color: white;
+                color: $white;
             }
         }
     }

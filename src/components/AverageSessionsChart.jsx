@@ -49,8 +49,6 @@ function AverageSessionsChart() {
 
 					<ResponsiveContainer width="100%" aspect={258 / 263}>
 						<LineChart
-							width={233}
-							height={233}
 							data={averageSessionsData}
 							margin={{ top: 80, bottom: 16, left: 16, right: 16 }}>
 							<XAxis
