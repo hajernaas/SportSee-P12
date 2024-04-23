@@ -14,7 +14,7 @@ import { UserAverageSessions } from "../service/Api";
 
 function AverageSessionsChart() {
 	const { userId } = useParams();
-	const [averageSessionsData, setAverageSessions] = useState([]);
+	const [averageSessionsData, setAverageSessions] = useState({});
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ function AverageSessionsChart() {
 	if (error)
 		return (
 			<div className="containerAverage">
-				<p>Données innaccessibles.</p>
+				<p>Données inaccessibles.</p>
 			</div>
 		);
 

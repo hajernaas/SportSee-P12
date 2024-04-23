@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 
 function ActivityChart() {
 	const { userId } = useParams();
-	const [activityData, setActivity] = useState([]);
+	const [activityData, setActivity] = useState({});
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
@@ -34,7 +34,7 @@ function ActivityChart() {
 	if (error)
 		return (
 			<div className="barChart">
-				<p>Données innaccessibles.</p>
+				<p>Données inaccessibles.</p>
 			</div>
 		);
 

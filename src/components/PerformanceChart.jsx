@@ -13,7 +13,7 @@ import { UserPerformance } from "../service/Api";
 
 function PerformanceChart() {
 	const { userId } = useParams();
-	const [performanceData, setPerformanceData] = useState([]);
+	const [performanceData, setPerformanceData] = useState({});
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
@@ -32,7 +32,7 @@ function PerformanceChart() {
 	if (error)
 		return (
 			<div className="performanceGraph">
-				<p>Données innaccessibles.</p>
+				<p>Données inaccessibles.</p>
 			</div>
 		);
 	return (

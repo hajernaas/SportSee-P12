@@ -17,26 +17,48 @@ import lipidIcon from "../assets/lipide-icon.svg";
 function KeyDataDetails({ keyData }) {
 	return (
 		<div className="KeydataContainer">
-			<NutritionCard
-				title={"Calories"}
-				count={`${keyData?.calorieCount.toLocaleString("en-US")}kCal`}
-				cover={calorieIcon}
-			/>
-			<NutritionCard
-				title={"Proteines"}
-				count={`${keyData?.proteinCount.toLocaleString("en-US")}g`}
-				cover={proteineIcon}
-			/>
-			<NutritionCard
-				title={"Glucides"}
-				count={`${keyData?.carbohydrateCount.toLocaleString("en-US")}g`}
-				cover={glucideIcon}
-			/>
-			<NutritionCard
-				title={"Lipides"}
-				count={`${keyData?.lipidCount.toLocaleString("en-US")}g`}
-				cover={lipidIcon}
-			/>
+			{keyData?.calorieCount ? (
+				<>
+					<NutritionCard
+						title={"Calories"}
+						count={`${keyData?.calorieCount.toLocaleString("en-US")}kCal`}
+						cover={calorieIcon}
+					/>
+				</>
+			) : (
+				<div className="NutritionCard">Données inaccessibles.</div>
+			)}
+
+			{keyData?.proteinCount ? (
+				<>
+					<NutritionCard
+						title={"Proteines"}
+						count={`${keyData?.proteinCount}g`}
+						cover={proteineIcon}
+					/>
+				</>
+			) : (
+				<div className="NutritionCard">Données inaccessibles.</div>
+			)}
+
+			{keyData?.carbohydrateCount ? (
+				<>
+					<NutritionCard
+						title={"Glucides"}
+						count={`${keyData?.carbohydrateCount}g`}
+						cover={glucideIcon}
+					/>
+				</>
+			) : (
+				<div className="NutritionCard">Données inaccessibles.</div>
+			)}
+			{keyData?.lipidCount ? (
+				<>
+					<NutritionCard title={"Lipides"} count={`${keyData?.lipidCount}g`} cover={lipidIcon} />
+				</>
+			) : (
+				<div className="NutritionCard">Données inaccessibles.</div>
+			)}
 		</div>
 	);
 }

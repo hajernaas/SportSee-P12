@@ -3,14 +3,9 @@ import dataActivity from "../mock/user-activity.json";
 import dataAverageSessions from "../mock/user-average-sessions.json";
 import dataPerformance from "../mock/user-performance.json";
 
-import {
-	UserData,
-	ActivityData,
-	AverageSessionData,
-	PerformanceData,
-} from "../service/FormattedData";
+import { UserData, ActivityData, AverageSessionData, PerformanceData } from "./FormattedData";
 
-const isMockData = true;
+const isMockData = process.env.REACT_APP_MOCK_DATA;
 const API_URL = process.env.REACT_APP_API_URL;
 
 /**
@@ -27,7 +22,7 @@ const API_URL = process.env.REACT_APP_API_URL;
  **/
 
 export async function UserInfo(userId) {
-	if (isMockData) {
+	if (isMockData === "true") {
 		const mockData = dataUser.find((user) => user.id === Number(userId));
 		if (!mockData) throw new Error("User not found in mock data");
 		return new UserData(mockData).getUserData();
@@ -38,7 +33,7 @@ export async function UserInfo(userId) {
 			const data = await response.json();
 			return new UserData(data.data).getUserData();
 		} catch (error) {
-			console.error("fetch operation error:", error);
+			console.log("fetch operation error:", error);
 			throw error;
 		}
 	}
@@ -51,7 +46,7 @@ export async function UserInfo(userId) {
  **/
 
 export async function UserActivity(userId) {
-	if (isMockData) {
+	if (isMockData === "true") {
 		const mockData = dataActivity.find((activity) => activity.userId === Number(userId));
 		if (!mockData) throw new Error("Activity not found in mock data");
 		return new ActivityData(mockData).getActivityData();
@@ -62,7 +57,7 @@ export async function UserActivity(userId) {
 			const data = await response.json();
 			return new ActivityData(data.data).getActivityData();
 		} catch (error) {
-			console.error("fetch operation error:", error);
+			console.log("fetch operation error:", error);
 			throw error;
 		}
 	}
@@ -75,7 +70,7 @@ export async function UserActivity(userId) {
  **/
 
 export async function UserAverageSessions(userId) {
-	if (isMockData) {
+	if (isMockData === "true") {
 		const mockData = dataAverageSessions.find((session) => session.userId === Number(userId));
 		if (!mockData) throw new Error("Average sessions not found in mock data");
 		return new AverageSessionData(mockData).getAverageSessionData();
@@ -86,7 +81,7 @@ export async function UserAverageSessions(userId) {
 			const data = await response.json();
 			return new AverageSessionData(data.data).getAverageSessionData();
 		} catch (error) {
-			console.error(" fetch operation error:", error);
+			console.log(" fetch operation error:", error);
 			throw error;
 		}
 	}
@@ -99,7 +94,7 @@ export async function UserAverageSessions(userId) {
  **/
 
 export async function UserPerformance(userId) {
-	if (isMockData) {
+	if (isMockData === "true") {
 		const mockData = dataPerformance.find((performance) => performance.userId === Number(userId));
 		if (!mockData) throw new Error("Performance not found in mock data");
 		return new PerformanceData(mockData).getPerformanceData();
@@ -108,10 +103,9 @@ export async function UserPerformance(userId) {
 			const response = await fetch(`${API_URL}/${userId}/performance`);
 			if (!response.ok) throw new Error("Network response was not ok");
 			const data = await response.json();
-
 			return new PerformanceData(data.data).getPerformanceData();
 		} catch (error) {
-			console.error("fetch operation error:", error);
+			console.log("fetch operation error:", error);
 			throw error;
 		}
 	}

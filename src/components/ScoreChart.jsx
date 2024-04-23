@@ -14,10 +14,10 @@ function ScoreChart({ score }) {
 		{ name: "score restant", value: 100 - score },
 	];
 
-	if (score === null) {
+	if (score === undefined) {
 		return (
 			<div className="scoreGraph">
-				<p>Données innaccessibles.</p>
+				<p>Données inaccessibles.</p>
 			</div>
 		);
 	}

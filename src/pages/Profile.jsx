@@ -25,8 +25,8 @@ function Profile() {
 			try {
 				const data = await UserInfo(userId);
 				setUser(data);
-			} catch (err) {
-				console.log("===== error =====", err);
+			} catch (error) {
+				console.log("===== error =====", error);
 				setError(true);
 			}
 		}
@@ -38,35 +38,31 @@ function Profile() {
 
 	return (
 		<section className="dashborad">
-			<>
-				{userData && (
-					<div className="dashborad__bloc">
-						<div className="dashborad__bloc--title">
-							<h1>
-								Bonjour <span>{userData?.userInfos?.firstName}</span>
-							</h1>
-							<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+			<div className="dashborad__bloc">
+				<div className="dashborad__bloc--title">
+					<h1>
+						Bonjour <span>{userData?.userInfos?.firstName || ""}</span>
+					</h1>
+					<p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+				</div>
+				<div className="dashborad__bloc--userInfo">
+					<div className="graph">
+						<div className="graph__activity">
+							<ActivityChart />
 						</div>
-						<div className="dashborad__bloc--userInfo">
-							<div className="graph">
-								<div className="graph__activity">
-									<ActivityChart />
-								</div>
 
-								<div className="graph__sub-activity">
-									<AverageSessionsChart />
-									<PerformanceChart />
-									<ScoreChart score={userData?.score} />
-								</div>
-							</div>
-
-							<div className="nutriment">
-								<KeyDataDetails keyData={userData?.keyData} />
-							</div>
+						<div className="graph__sub-activity">
+							<AverageSessionsChart />
+							<PerformanceChart />
+							<ScoreChart score={userData?.score} />
 						</div>
 					</div>
-				)}
-			</>
+
+					<div className="nutriment">
+						<KeyDataDetails keyData={userData?.keyData} />
+					</div>
+				</div>
+			</div>
 		</section>
 	);
 }
